@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="輸入一樣日常用品，揭曉一件由 AI 生成的生活 BUG。">
+  <title>人生 BUG 博物館</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>人生 BUG<br>博物館</h1>
+      <span class="mirror" aria-hidden="true"><i></i></span>
+    </header>
+    <form id="discovery">
+      <label for="item">輸入一樣你今天用過的東西</label>
+      <div class="controls">
+        <input id="item" name="item" maxlength="60" placeholder="例如：鏡子、雨傘、訂書機" autocomplete="off">
+        <button type="submit">發現 BUG</button>
+      </div>
+      <p id="preview" hidden>本機排版預覽。輸入「鏡子」可查看示例。</p>
+    </form>
+    <p id="status" role="status"></p>
+    <article id="exhibit" aria-labelledby="bug-name" hidden>
+      <p id="bug-item" class="tag"></p>
+      <h2 id="bug-name" tabindex="-1"></h2>
+      <dl>
+        <div><dt>發生情境</dt><dd id="situation"></dd></div>
+        <div><dt>BUG 表現</dt><dd id="symptom"></dd></div>
+        <div><dt>修復建議</dt><dd id="fix"></dd></div>
+      </dl>
+    </article>
+  </main>
+</body>
+</html>
